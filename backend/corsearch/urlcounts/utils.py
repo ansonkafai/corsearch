@@ -26,6 +26,22 @@ def read_hosts_txt(hosts_txt_path: Path) -> List:
     return hosts_list
 
 
+def extract_domain_name(url: str) -> str:
+    """Get the domain name portion of the URL.
+
+    Args:
+        url: The URL to extract domain name from.
+
+    Returns:
+        The domain name portion of the URL.
+    """
+    # Extract the host name from url, i.e. including the www or subdomain.
+    hostname = urlparse(url).netloc
+
+    # Remove www from domain name.
+    return hostname.replace("www.", "")
+
+
 def process_urls(urls_list: List) -> Dict[str, Any]:
     """Process URLs according to the requirements.
 
@@ -49,15 +65,19 @@ def process_urls(urls_list: List) -> Dict[str, Any]:
     hosts_list = read_hosts_txt(HOSTS_TXT_PATH)
 
     dict_count_urls_submitted_per_host: Dict[str, int] = {}
+    dict_count_urls_matched_per_host = {host: 0 for host in hosts_list}
     list_urls_not_match_any_hosts = []
 
     for url in urls_list:
         # Get the domain name portion of the URL.
-        domain_name = urlparse(url).netloc
+        domain_name = extract_domain_name(url)
+        print(domain_name)
 
         if domain_name not in hosts_list:
             # Prepare a list of all URLs that did not match any hosts.
             list_urls_not_match_any_hosts.append(url)
+        else:
+            dict_count_urls_matched_per_host[domain_name] = dict_count_urls_matched_per_host[domain_name] + 1
 
         # For each host, keep a count of how many matching URLs are submitted,
         # regardless of whether there is a match or not.
@@ -71,7 +91,7 @@ def process_urls(urls_list: List) -> Dict[str, Any]:
 
     # Prepare a list of all unique hosts for which there was a matching URL with a count of URLs that matched.
     list_count_urls_matched_per_host = [
-        f"count=[{val}] {key}" for (key, val) in dict_count_urls_submitted_per_host.items() if val > 0
+        f"count=[{val}] {key}" for (key, val) in dict_count_urls_matched_per_host.items() if val > 0
     ]
 
     return {

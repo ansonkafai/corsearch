@@ -24,10 +24,10 @@ class TestUrlcounts:
         resp = self.app_client.post("/urlcounts", json=json_data)
         resp_json = resp.get_json()
 
-        assert resp_json["int_count_urls_match_a_host"] == 73
-        assert resp_json["int_count_urls_not_match_any_hosts"] == 49
-        assert "count=[15] www.torrentdownloads.test" in list(resp_json["list_count_urls_matched_per_host"])
-        assert len(resp_json["list_urls_not_match_any_hosts"]) == 49
+        assert resp_json["int_count_urls_match_a_host"] == 2
+        assert resp_json["int_count_urls_not_match_any_hosts"] == 2
+        assert "count=[2] torrentdownloads.test" in list(resp_json["list_count_urls_matched_per_host"])
+        assert len(resp_json["list_urls_not_match_any_hosts"]) == 2
 
     def test_urlcounts_fail(self):
         """Test the fail cases of '/urlcounts' endpoint."""
