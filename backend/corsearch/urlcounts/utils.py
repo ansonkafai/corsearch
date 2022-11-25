@@ -71,7 +71,6 @@ def process_urls(urls_list: List) -> Dict[str, Any]:
     for url in urls_list:
         # Get the domain name portion of the URL.
         domain_name = extract_domain_name(url)
-        print(domain_name)
 
         if domain_name not in hosts_list:
             # Prepare a list of all URLs that did not match any hosts.
