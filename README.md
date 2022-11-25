@@ -115,4 +115,5 @@ Assumption: Git repository is cloned to your local path `/c/tmp/corsearch/`.
 
 1. Implement automatic testing on frontend pages using cypress.
 2. Arrange React pages more structural into `pages/`, `services/` and `components/`.
+3. Externalize API endpoint root to environment variables instead of hardcoded inside React pages.
 
