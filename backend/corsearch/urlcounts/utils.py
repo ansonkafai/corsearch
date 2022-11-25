@@ -65,7 +65,7 @@ def process_urls(urls_list: List) -> Dict[str, Any]:
     hosts_list = read_hosts_txt(HOSTS_TXT_PATH)
 
     dict_count_urls_submitted_per_host: Dict[str, int] = {}
-    dict_count_urls_matched_per_host = {host: 0 for host in hosts_list}
+    dict_count_urls_matched_per_host: Dict[str, int] = {}
     list_urls_not_match_any_hosts = []
 
     for url in urls_list:
@@ -76,7 +76,7 @@ def process_urls(urls_list: List) -> Dict[str, Any]:
             # Prepare a list of all URLs that did not match any hosts.
             list_urls_not_match_any_hosts.append(url)
         else:
-            dict_count_urls_matched_per_host[domain_name] = dict_count_urls_matched_per_host[domain_name] + 1
+            dict_count_urls_matched_per_host[domain_name] = dict_count_urls_matched_per_host.get(domain_name, 0) + 1
 
         # For each host, keep a count of how many matching URLs are submitted,
         # regardless of whether there is a match or not.
