@@ -5,7 +5,6 @@ import { Alert, Container, Button, Form, Table } from 'react-bootstrap'
 import axios from 'axios'
 
 const Urlcounts = () => {
-    const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string>('')
     const [submitting, setSubmitting] = useState(false)
     const [submitSuccess, setSubmitSuccess] = useState(false)
@@ -73,13 +72,13 @@ const Urlcounts = () => {
                 </Form.Group>
 
                 {/* Submit button. */}
-                <Button onClick={onSubmit} disabled={submitting || loading}>
+                <Button onClick={onSubmit} disabled={submitting}>
                     Submit
                 </Button>
 
                 {/* Clear button. */}
                 &nbsp;
-                <Button onClick={onClear} disabled={submitting || loading}>
+                <Button onClick={onClear} disabled={submitting}>
                     Clear
                 </Button>
 
