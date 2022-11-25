@@ -8,7 +8,7 @@ please refer to [TechnicalChallenge.pdf](TechnicalChallenge.pdf)
 Before running the app,
 please check if your local machine meets the following requirements:
 
-1. Python 3.8 or later is installed and added 
+1. Python 3.8 or later is installed. 
 2. The below paths are added to the system path:
    ```shell script
    <Python installation root>/
