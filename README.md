@@ -117,4 +117,5 @@ Assumption: Git repository is cloned to your local path `/c/tmp/corsearch/`.
 2. Arrange React pages more structural into `pages/`, `services/` and `components/`.
 3. Externalize API endpoint root to environment variables instead of hardcoded inside React pages.
 4. Implement pylint on Python code to minimize runtime error and standardize coding style.
+5. Enable HTTPS on both frontend and backend servers.
 
