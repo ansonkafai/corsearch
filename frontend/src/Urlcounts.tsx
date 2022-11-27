@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
-import { Alert, Container, Button, Form, Table } from 'react-bootstrap'
+import { Alert, Container, Button, Form } from 'react-bootstrap'
 
 import axios from 'axios'
 
