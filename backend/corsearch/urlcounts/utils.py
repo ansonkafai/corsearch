@@ -58,9 +58,11 @@ def process_urls(urls_list: List) -> Dict[str, Any]:
             "list_urls_not_match_any_hosts": <A list of all URLs that did not match any hosts>,
         }
     """
+    # Requirement:
     # Application must deduplicate the URLs that were POSTed to ensure that only unique URLs are counted.
     urls_list = list(set(urls_list))
 
+    # Requirement:
     # Application must read data into memory from a text file called “hosts.txt” which will contain a list of hosts.
     hosts_list = read_hosts_txt(HOSTS_TXT_PATH)
 
@@ -69,25 +71,27 @@ def process_urls(urls_list: List) -> Dict[str, Any]:
     list_urls_not_match_any_hosts = []
 
     for url in urls_list:
-        # Get the domain name portion of the URL.
+        # Requirement: Get the domain name portion of the URL.
         domain_name = extract_domain_name(url)
 
         if domain_name not in hosts_list:
-            # Prepare a list of all URLs that did not match any hosts.
+            # Requirement: Prepare a list of all URLs that did not match any hosts.
             list_urls_not_match_any_hosts.append(url)
         else:
             dict_count_urls_matched_per_host[domain_name] = dict_count_urls_matched_per_host.get(domain_name, 0) + 1
 
+        # Requirement:
         # For each host, keep a count of how many matching URLs are submitted,
         # regardless of whether there is a match or not.
         dict_count_urls_submitted_per_host[domain_name] = dict_count_urls_submitted_per_host.get(domain_name, 0) + 1
 
-    # Keep a count of how many URLs don’t match any hosts.
+    # Requirement: Keep a count of how many URLs don’t match any hosts.
     int_count_urls_not_match_any_hosts = len(list_urls_not_match_any_hosts)
 
-    # Keep a count of how many URLs match a host.
+    # Requirement: Keep a count of how many URLs match a host.
     int_count_urls_match_a_host = len(urls_list) - int_count_urls_not_match_any_hosts
 
+    # Requirement:
     # Prepare a list of all unique hosts for which there was a matching URL with a count of URLs that matched.
     list_count_urls_matched_per_host = [
         f"count=[{val}] {key}" for (key, val) in dict_count_urls_matched_per_host.items() if val > 0
