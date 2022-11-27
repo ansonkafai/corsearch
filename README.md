@@ -8,13 +8,13 @@ please refer to [TechnicalChallenge.pdf](TechnicalChallenge.pdf)
 Before running the app,
 please check if your local machine meets the following requirements:
 
-1. Python 3.8 or later is installed. 
+1. Python 3.8 or later is installed. [Download Python](https://www.python.org/downloads/release/python-3814/)
 2. The below paths are added to the system path:
    ```shell script
    <Python installation root>/
    <Python installation root>/Scripts/
    ```
-3. Node.js 18.12.1 LTS is installed.
+3. Node.js 18.12.1 LTS is installed. [Download Node.js](https://nodejs.org/en/download/)
 4. Node.js installation root is added to the system path.
 5. Ports 3000 and 5000 are available.
 
