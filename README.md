@@ -111,7 +111,7 @@ Assumption: Git repository is cloned to your local path `/c/tmp/corsearch/`.
 | Frontend packages | [frontend/package.json](frontend/package.json)                                         |
 | Backend unittest  | [backend/corsearch/tests/test_urlcounts.py](backend/corsearch/tests/test_urlcounts.py) |
 | Backend env vars  | [backend/.env](backend/.env)                                                           |
-| Backend endpoints | [backend/corsearch/urlcounts.py](backend/corsearch/ulcounts.py)                        |
+| Backend endpoints | [backend/corsearch/urlcounts.py](backend/corsearch/urlcounts.py)                        |
 
 ## ToDo
 
