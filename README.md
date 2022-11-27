@@ -16,7 +16,7 @@ please check if your local machine meets the following requirements:
    ```
 3. Node.js 18.12.1 LTS is installed.
 4. Node.js installation root is added to the system path.
-5. Port 3000 and 5000 are available.
+5. Ports 3000 and 5000 are available.
 
 ## Steps for Running on Windows
 
@@ -33,6 +33,7 @@ Assumption: Git repository is cloned to your local path `C:\tmp\corsearch\`.
    > pip install -r requirements.txt
    > flask run
    ```
+   To view OpenAPI Document, please access http://127.0.0.1:5000/swagger-ui
 
 2. Open another command prompt dedicated for **frontend server** and run the following commands:
    ```commandline
@@ -49,7 +50,7 @@ Assumption: Git repository is cloned to your local path `C:\tmp\corsearch\`.
    > cd venv/Scripts
    > activate.bat
    > cd C:\tmp\corsearch\backend
-   > tox -e py38
+   > tox
    ```
     
 ## Steps for Running on Linux
@@ -65,6 +66,7 @@ Assumption: Git repository is cloned to your local path `/c/tmp/corsearch/`.
    $ pip install -r requirements.txt
    $ flask run
    ```
+   To view OpenAPI Document, please access http://127.0.0.1:5000/swagger-ui
 
 2. Open another terminal session dedicated for **frontend server** and run the following commands:
    ```shell script
@@ -79,7 +81,7 @@ Assumption: Git repository is cloned to your local path `/c/tmp/corsearch/`.
    ```shell script
    $ cd /c/tmp/corsearch/backend
    $ source venv/Scripts/activate
-   $ tox -e py38
+   $ tox
    ```
     
 ## Technology Stack
@@ -103,13 +105,13 @@ Assumption: Git repository is cloned to your local path `/c/tmp/corsearch/`.
 
 ## Quick Reference of Code Locations
 
-| Component         | Code Locations                                                                                                                                                 |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Frontend page     | [frontend/src/Urlcounts.tsx](frontend/src/Urlcounts.tsx)                                                                                                       |
-| Frontend packages | [frontend/package.json](frontend/package.json)                                                                                                                 |
-| Backend unittest  | [backend/corsearch/test_urlcounts.py](backend/corsearch/test_urlcounts.py)                                                                                     |
-| Backend env vars  | [backend/.env](backend/.env)                                                                                                                                   |
-| Backend endpoints | [backend/corsearch/urlcounts/routes.py](backend/corsearch/urlcounts/routes.py)<br>[backend/corsearch/urlcounts/utils.py](backend/corsearch/urlcounts/utils.py) |
+| Component         | Code Locations                                                                         |
+|-------------------|----------------------------------------------------------------------------------------|
+| Frontend page     | [frontend/src/Urlcounts.tsx](frontend/src/Urlcounts.tsx)                               |
+| Frontend packages | [frontend/package.json](frontend/package.json)                                         |
+| Backend unittest  | [backend/corsearch/tests/test_urlcounts.py](backend/corsearch/tests/test_urlcounts.py) |
+| Backend env vars  | [backend/.env](backend/.env)                                                           |
+| Backend endpoints | [backend/corsearch/urlcounts.py](backend/corsearch/ulcounts.py)                        |
 
 ## ToDo
 

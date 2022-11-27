@@ -97,12 +97,12 @@ const Urlcounts = () => {
                         <h4 className="mb-3">Urlcounts Result:</h4>
 
                         <Form.Label>
-                            The count of URLs that did match a host : <b>{resultJSON?.int_count_urls_match_a_host}</b>
+                            The count of URLs that did match a host : <b>{resultJSON?.count_urls_match_a_host}</b>
                         </Form.Label><br/>
 
                         <Form.Label>
                             The count of URLs that did not match any hosts :&nbsp;
-                            <b>{resultJSON?.int_count_urls_not_match_any_hosts}</b>
+                            <b>{resultJSON?.count_urls_not_match_any_hosts}</b>
                         </Form.Label><br/>
 
                         <Form.Group>
@@ -110,7 +110,7 @@ const Urlcounts = () => {
                                 A list of all unique hosts for which there was a matching URL with a count of URLs that matched :
                             </Form.Label>
                             <Form.Control as="textarea" rows={8}
-                                value={resultJSON?.list_count_urls_matched_per_host.join('\n')}
+                                value={resultJSON?.count_urls_matched_per_host.join('\n')}
                                 disabled readOnly
                             />
                         </Form.Group>
@@ -118,7 +118,7 @@ const Urlcounts = () => {
                         <Form.Group className="mt-2">
                             <Form.Label>A list of all URLs that did not match any hosts :</Form.Label>
                             <Form.Control as="textarea" rows={8}
-                                value={resultJSON?.list_urls_not_match_any_hosts.join('\n')}
+                                value={resultJSON?.urls_not_match_any_hosts.join('\n')}
                                 disabled readOnly
                             />
                         </Form.Group>
