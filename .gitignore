@@ -130,5 +130,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Generated files for Swagger docs.
+swagger.yaml
+
 # Personal files
 notes.py
